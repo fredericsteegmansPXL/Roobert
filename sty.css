@@ -1,24 +1,52 @@
+* {
+    font-family: 'Roobert VRT', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4fff8;
+}
+
 #chat-container {
     width: 300px;
     height: 400px;
     border: 1px solid #ccc;
     overflow-y: scroll;
     padding: 10px;
+    margin: 0 auto; /* Center the container horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align input container to the bottom */
 }
 
 #chat-display {
-    margin-bottom: 10px;
+    flex-grow: 1; /* Allow chat display to grow and fill remaining space */
+    overflow-y: auto; /* Enable scrolling within the chat display */
 }
 
-.message {
-    background-color: #f0f0f0;
+.user-message {
+    background-color: #eff7ff; /* Light blue for user messages */
     padding: 5px 10px;
     border-radius: 10px;
     margin-bottom: 5px;
 }
 
+.bot-message {
+    background-color: #f0f0f0; /* Light gray for bot messages */
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+#input-container {
+    display: flex;
+    align-items: center; /* Center input vertically */
+}
+
 #user-input {
-    width: calc(100% - 80px);
+    flex: 1; /* Take remaining space */
     padding: 5px;
     margin-right: 5px;
 }

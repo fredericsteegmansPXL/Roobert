@@ -15,31 +15,31 @@ function sendMessage() {
     const userInput = document.getElementById("user-input").value.trim();
     if (userInput === "") return;
 
-    displayMessage(userInput, "user");
+    // Display user's message immediately with user-message class
+    displayMessage(userInput, "user-message");
 
-    if (botState === "askQuestion") {
-        // Bot asks a question
-        displayMessage("Natuurlijk! Met welk project heb je hulp nodig van een AI-tool?", "bot");
-        botState = "awaitingAnswer";
-    } else if (botState === "awaitingAnswer") {
-        // Simulate delay before bot's response
-        setTimeout(function() {
+    // Simulate delay before bot's response
+    setTimeout(function() {
+        if (botState === "askQuestion") {
+            // Bot asks a question
+            displayMessage("Natuurlijk! Met welk project heb je hulp nodig van een AI-tool?", "bot-message");
+            botState = "awaitingAnswer";
+        } else if (botState === "awaitingAnswer") {
             // Bot responds to the user's answer
-            displayMessage("Oké. Hier zijn enkele AI-tools die jouw kunnen helpen met je project", "bot");
+            displayMessage("Oké. Hier zijn enkele AI-tools die jouw kunnen helpen met je project", "bot-message");
             displayImages(["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg"]);
             botState = "askQuestion";
-        }, 2000); // 2000 milliseconds delay (2 seconds)
-    }
+        }
+    }, 2000); // 2000 milliseconds delay (2 seconds)
 
     document.getElementById("user-input").value = "";
 }
 
-
-function displayMessage(message, sender) {
+function displayMessage(message, senderClass) {
     const messageDisplay = document.getElementById("chat-display");
     const messageElement = document.createElement("div");
     messageElement.classList.add("message");
-    messageElement.classList.add(sender === "user" ? "user-message" : "bot-message");
+    messageElement.classList.add(senderClass); // Add the sender class
     messageElement.innerText = message;
     messageDisplay.appendChild(messageElement);
     messageDisplay.scrollTop = messageDisplay.scrollHeight;
