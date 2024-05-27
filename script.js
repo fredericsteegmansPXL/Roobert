@@ -1,5 +1,12 @@
+// script.js
+
 // Define a variable to keep track of the bot's state
 let botState = "askQuestion";
+
+// Display a welcome message after a delay when the page loads
+setTimeout(function() {
+    displayMessage("Welcome to the chatbot! How can I assist you?", "bot-message");
+}, 1000); // Delay of 1000 milliseconds (1 second)
 
 document.getElementById("send-btn").addEventListener("click", function() {
     sendMessage();

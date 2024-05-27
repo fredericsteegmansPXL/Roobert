@@ -10,12 +10,14 @@ body {
 }
 
 #chat-container {
-    width: 300px;
-    height: 400px;
-    border: 1px solid #ccc;
+    width: 800px;
+    height: 500px;
+    border: 1px solid #a3f8c3;
+    border-radius: 10px;
+    background-color: #f7fffa;
     overflow-y: scroll;
-    padding: 10px;
-    margin: 0 auto; /* Center the container horizontally */
+    padding: 3rem;
+    margin: 5rem auto; /* Center the container horizontally */
     display: flex;
     flex-direction: column;
     justify-content: flex-end; /* Align input container to the bottom */
@@ -29,6 +31,7 @@ body {
 .user-message {
     background-color: #eff7ff; /* Light blue for user messages */
     padding: 5px 10px;
+    text-align: right;
     border-radius: 10px;
     margin-bottom: 5px;
 }
