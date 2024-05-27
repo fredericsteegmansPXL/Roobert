@@ -17,47 +17,71 @@ body {
     background-color: #f7fffa;
     overflow-y: scroll;
     padding: 3rem;
-    margin: 5rem auto; /* Center the container horizontally */
+    margin: 1rem auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Align input container to the bottom */
+    justify-content: flex-end;
+    box-shadow: 0 2px 4px rgba(0, 0, 2, 0.16);
 }
 
+
 #chat-display {
-    flex-grow: 1; /* Allow chat display to grow and fill remaining space */
-    overflow-y: auto; /* Enable scrolling within the chat display */
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 .user-message {
-    background-color: #eff7ff; /* Light blue for user messages */
+    background-color: rgba(95, 241, 197, 0.27);
     padding: 5px 10px;
     text-align: right;
     border-radius: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 2rem;
+    margin-left: 15rem;
 }
 
 .bot-message {
-    background-color: #f0f0f0; /* Light gray for bot messages */
-    padding: 5px 10px;
+    background-color: #f0f0f0;
+    padding: 0.5rem 2rem;
     border-radius: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 2rem;
+    width: fit-content;
 }
 
 #input-container {
     display: flex;
-    align-items: center; /* Center input vertically */
+    align-items: center;
 }
 
 #user-input {
-    flex: 1; /* Take remaining space */
-    padding: 5px;
+    flex: 1;
+    padding: 8px;
     margin-right: 5px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
 }
 
 #send-btn {
-    padding: 5px 10px;
-    background-color: #007bff;
+    padding: 6px 15px;
+    background-color: #30cc9d;
     color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+#send-btn:hover {
+    background-color: #29BD90;
+}
+
+.intro {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.intro h1 {
+    font-size: 30pt;
+}
+
+.intro p {
+    font-size: 10pt;
 }

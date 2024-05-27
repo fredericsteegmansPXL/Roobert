@@ -1,12 +1,8 @@
-// script.js
-
-// Define a variable to keep track of the bot's state
 let botState = "askQuestion";
 
-// Display a welcome message after a delay when the page loads
 setTimeout(function() {
-    displayMessage("Welcome to the chatbot! How can I assist you?", "bot-message");
-}, 1000); // Delay of 1000 milliseconds (1 second)
+    displayMessage("Welkom bij AI-buddy. Ik ben Roobert, jouw persoonlijke AI chatbot.", "bot-message");
+}, 1000);
 
 document.getElementById("send-btn").addEventListener("click", function() {
     sendMessage();
@@ -22,23 +18,18 @@ function sendMessage() {
     const userInput = document.getElementById("user-input").value.trim();
     if (userInput === "") return;
 
-    // Display user's message immediately with user-message class
     displayMessage(userInput, "user-message");
 
-    // Simulate delay before bot's response
     setTimeout(function() {
         if (botState === "askQuestion") {
-            // Bot asks a question
             displayMessage("Natuurlijk! Met welk project heb je hulp nodig van een AI-tool?", "bot-message");
             botState = "awaitingAnswer";
         } else if (botState === "awaitingAnswer") {
-            // Bot responds to the user's answer
             displayMessage("Oké. Hier zijn enkele AI-tools die jouw kunnen helpen met je project", "bot-message");
-            displayImages(["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg"]);
+            displayImages(["assets/veedio.png", "assets/captionsai.jpg", "assets/animaker.png", "assets/flixier.jpeg"]);
             botState = "askQuestion";
         }
-    }, 2000); // 2000 milliseconds delay (2 seconds)
-
+    }, 2000);
     document.getElementById("user-input").value = "";
 }
 
@@ -46,7 +37,7 @@ function displayMessage(message, senderClass) {
     const messageDisplay = document.getElementById("chat-display");
     const messageElement = document.createElement("div");
     messageElement.classList.add("message");
-    messageElement.classList.add(senderClass); // Add the sender class
+    messageElement.classList.add(senderClass);
     messageElement.innerText = message;
     messageDisplay.appendChild(messageElement);
     messageDisplay.scrollTop = messageDisplay.scrollHeight;
@@ -58,6 +49,8 @@ function displayImages(imageUrls) {
         const imgElement = document.createElement("img");
         imgElement.src = url;
         imgElement.classList.add("bot-message");
+        imgElement.style.maxWidth = "200px";
+        imgElement.style.marginRight = "10px";
         messageDisplay.appendChild(imgElement);
     });
     messageDisplay.scrollTop = messageDisplay.scrollHeight;
