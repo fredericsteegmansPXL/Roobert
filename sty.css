@@ -6,15 +6,14 @@
 }
 
 body {
-    background-color: #f4fff8;
+    background-color: #243E5B;
 }
 
 #chat-container {
     width: 800px;
     height: 500px;
-    border: 1px solid #a3f8c3;
     border-radius: 10px;
-    background-color: #f7fffa;
+    background-color: #182A3E;
     overflow-y: scroll;
     padding: 3rem;
     margin: 1rem auto;
@@ -31,16 +30,18 @@ body {
 }
 
 .user-message {
-    background-color: rgba(95, 241, 197, 0.27);
+    background-color: #30cc9d;
     padding: 5px 10px;
     text-align: right;
     border-radius: 10px;
     margin-bottom: 2rem;
     margin-left: 15rem;
+    color: #e5e5e5;
 }
 
 .bot-message {
-    background-color: #f0f0f0;
+    background-color: #6E7882;
+    color: #e5e5e5;
     padding: 0.5rem 2rem;
     border-radius: 10px;
     margin-bottom: 2rem;
@@ -56,8 +57,10 @@ body {
     flex: 1;
     padding: 8px;
     margin-right: 5px;
-    border: 1px solid #e5e5e5;
+    border: 0px solid #e5e5e5;
     border-radius: 5px;
+    color: #e5e5e5;
+    background-color: #0D1823;
 }
 
 #send-btn {
@@ -80,8 +83,17 @@ body {
 
 .intro h1 {
     font-size: 30pt;
+    color: #29BD90;
 }
 
 .intro p {
     font-size: 10pt;
+    color: #e5e5e5;
+}
+
+.intro img {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    width: 200px;
 }

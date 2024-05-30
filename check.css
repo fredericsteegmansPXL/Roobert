@@ -1,0 +1,15 @@
+body {
+    background-color: #243E5B;
+    text-align: center;
+}
+
+img {
+    width: 80vw;
+}
+
+.logo {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    width: 200px;
+}
